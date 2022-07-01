@@ -5,7 +5,7 @@ import joi from 'joi';
 
 export async function createUser(req, res) {
   const body = req.body;
-  console.log(body);
+ 
   if(req.body.password!==req.body.passwordConfirmation){
     return res.sendStatus(422);
   }
@@ -46,7 +46,6 @@ export async function loginUser(req, res) {
     return res.sendStatus(422);
   }
 
-  //Preciso pegar o user pelo email
   const userdb = await db.collection('usuarios').findOne({ email: usuario.email });
 
   if (userdb && bcrypt.compareSync(usuario.password, userdb.password)) {
