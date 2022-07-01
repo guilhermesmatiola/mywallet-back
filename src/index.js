@@ -1,22 +1,19 @@
-import express from "express";
-import cors from "cors";
-import { loginUser, createUser} from "./controllers/userController.js";
-import { getPosts, createPost} from "./controllers/postsController.js";
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import postsRouter from './routes/postsRouter.js';
+import authRouter from './routes/authRouter.js';
 
 dotenv.config();
 
 const app = express();
+
+// Aqui tb são middlewares
 app.use(express.json());
 app.use(cors());
 
-app.post('/login', loginUser);
-app.post('/cadastrar', createUser);
+app.use(authRouter);
+app.use(postsRouter);
 
-app.get('/posts', getPosts);
-app.post('/posts', createPost);
-
-const PORT = process.env.PORT || 5001;
-
-app.listen(PORT, () => {
-    console.log(chalk.bold.yellow("server on"));
-});
+const PORT = process.env.PORT || 5008;
+app.listen(PORT, () => console.log('servidor on'));

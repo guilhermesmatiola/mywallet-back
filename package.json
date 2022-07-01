@@ -1,5 +1,5 @@
 {
-  "name": "projeto13-mywallet-back",
+  "name": "my-wallet-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,17 +18,16 @@
   "bugs": "",
   "keywords": [],
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Klaus",
+    "email": "klausdk1999@gmail.com"
   },
   "contributors": [],
   "scripts": {
-    "dev": "",
-    "test": ""
+    "start": "nodemon ./src/index.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
     "chalk": "^5.0.1",
     "cors": "^2.8.5",
     "dayjs": "^1.11.3",
@@ -37,6 +36,7 @@
     "express": "^4.18.1",
     "joi": "^17.6.0",
     "mongodb": "^4.7.0",
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "uuid": "^8.3.2"
   }
 }
