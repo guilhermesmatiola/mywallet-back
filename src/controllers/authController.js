@@ -50,13 +50,14 @@ export async function loginUser(req, res) {
 
   if (userdb && bcrypt.compareSync(usuario.password, userdb.password)) {
     const token = uuid();
+    const {name,email}=userdb;
 
     await db.collection('sessoes').insertOne({
       token,
       userId: userdb._id
     });
 
-    return res.status(201).send({ token });
+    return res.status(201).send({ name, email, token });
   } else {
     return res.status(401).send('Senha ou email incorretos!');
   }

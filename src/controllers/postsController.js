@@ -4,7 +4,8 @@ import joi from 'joi';
 export async function getTransactions(req, res) {
   const session = res.locals.session;
 
-  const posts = await db.collection('posts').find({ userId: new objectId(session.userId) }).toArray();
+  //const posts = await db.collection('posts').find({ userId: new objectId(session.userId) }).toArray();
+  const posts = await db.collection('transactions').find({ userId: new objectId(session.userId) }).toArray();
 
   res.send(posts);
 }
