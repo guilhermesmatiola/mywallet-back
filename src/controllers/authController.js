@@ -53,6 +53,7 @@ export async function loginUser(req, res) {
     const {name,email}=userdb;
 
     await db.collection('sessoes').insertOne({
+      //name,
       token,
       userId: userdb._id
     });
