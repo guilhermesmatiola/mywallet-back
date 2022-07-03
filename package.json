@@ -18,12 +18,13 @@
   "bugs": "",
   "keywords": [],
   "author": {
-    "name": "Klaus",
-    "email": "klausdk1999@gmail.com"
+    "name": "gui",
+    "email": "guimatiola@gmail.com"
   },
   "contributors": [],
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "node ./src/index.js",
+    "dev":"nodemon ./src/index.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
